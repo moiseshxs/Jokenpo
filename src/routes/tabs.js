@@ -20,14 +20,10 @@ export default function TabRoutes() {
       tabBarShowLabel: false,
 
       tabBarStyle: {
-      position: 'absolute',
       backgroundColor: '#fff',
       tabBarLabelPosition: 'below-icon',
       paddingBottom: 3,
-      bottom: 20,
-      marginHorizontal: 70,
       borderWidth: 0,
-      borderRadius: 50,
 
       shadowColor: '#000',
       shadowOpacity: 0.10,
