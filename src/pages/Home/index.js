@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView, Text, View, Image, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
@@ -13,7 +14,11 @@ export default function App() {
         
         </View>
         <View style={styles.areaConfig}>
-        
+          <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>
+            <TouchableOpacity onPress={() => navigation.navigate('Luta')}>
+              <Ionicons name="settings-sharp" size={50} color="white" />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
 
@@ -23,8 +28,8 @@ export default function App() {
 
       <View style={styles.areaFooter}>
         <TouchableOpacity onPress={() => navigation.navigate('Luta')}>
-          <View style={styles.areaBotaoJogar}>
-            <Text>JOGAr</Text>
+          <View style={[styles.areaBotaoJogar, styles.shadowAreaElementos]}>
+            <Text style={styles.fontJogar}>JOGAR</Text>
           </View>
         </TouchableOpacity>
       </View>
