@@ -10,6 +10,9 @@ export default function App() {
   const [placarJ, setPlacarJ] = useState(0)
   const [placarC, setPlacarC] = useState(0)
   const [score, setScore] = useState(0)
+  const [fogo, setFogo] = useState(0)
+  const [agua, setAgua] = useState(0)
+  const [gelo, setGelo] = useState(0)
 
   function jogar(valor) {
     setJogador(valor)
@@ -19,6 +22,7 @@ export default function App() {
     if (valor==1){
       if (computador==2){
         setPlacarJ(placarJ+1)
+        setGelo(gelo+1)
       }else if(computador==3){
         setPlacarC(placarC+1)
       }else{
@@ -29,12 +33,14 @@ export default function App() {
         setPlacarC(placarC+1)
       }else if (computador==3){
         setPlacarJ(placarJ+1)
+        setAgua(agua+1)
       }else{
 
       }
     }else if (valor==3){
       if (computador==1){
         setPlacarJ(placarJ+1)
+        setFogo(fogo+1)
       }else if (computador==2){
         setPlacarC(placarC+1)
       }else{
@@ -42,18 +48,30 @@ export default function App() {
       }
     }
 
-    if(placarJ==3){
+    if(gelo==1 && agua==1 && fogo==1){
       setScore(score+1)
-      setPlacarC(0)
-      setPlacarJ(0)
-    }else if (placarC==3){
-      setScore(0)
-      setPlacarC(0)
-      setPlacarJ(0)
+      setAgua(0)
+      setFogo(0)
+      setGelo(0)
+    }else if(gelo==3){
+      setScore(score+1)
+      setAgua(0)
+      setFogo(0)
+      setGelo(0)
+    }else if(agua==3){
+      setScore(score+1)
+      setAgua(0)
+      setFogo(0)
+      setGelo(0)
+    }else if(fogo==3){
+      setScore(score+1)
+      setAgua(0)
+      setFogo(0)
+      setGelo(0)
     }else{
 
     }
-
+    
   }
 
   function exibirF(valor){
@@ -86,7 +104,9 @@ export default function App() {
               
           </View>
           <View style={styles.areaNumPlacar}>
-              {placarJ}
+              fogo: {fogo}
+              agua: {agua}
+              gelo: {gelo}
           </View>
         </View>
 
@@ -96,7 +116,7 @@ export default function App() {
 
         <View style={styles.areaEsqDir}>
           <View style={styles.areaNumPlacar}>
-              {placarC}
+              
           </View>
           <View style={styles.areaFoto}>
             <View>
