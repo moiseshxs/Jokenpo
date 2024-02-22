@@ -25,6 +25,10 @@ export default StyleSheet.create({
     },
     areaNumPlacar:{
         flex: 1,
+        flexDirection: 'row',
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor:'pink'
     },
 
     areaMeio: {
@@ -54,6 +58,8 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     fundoCarta: {
+        alignItems: 'center',
+        justifyContent: 'center',
         height: 125,
         width: 125,
         borderWidth: 10,
@@ -68,9 +74,9 @@ export default StyleSheet.create({
         backgroundColor: 'brown',
         paddingHorizontal: 20,
         paddingVertical: 10,
-        gap: 10,
         borderTopWidth: 10,
         borderColor: 'black',
+        justifyContent:'space-between'
     },
     fundoElementos: {
         flex: 1,
@@ -84,6 +90,10 @@ export default StyleSheet.create({
     fotoElemento: {
         height: 90,
         width: 90,
+    },
+    fotoElemento2: {
+        height:30,
+        width:30
     },
 
     shadowElementos: {
