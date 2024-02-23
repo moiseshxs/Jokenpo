@@ -5,7 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../pages/Home';
-import Cartas from '../pages/Cartas';
 import Config from '../pages/Config';
 
 const Tab = createBottomTabNavigator();
@@ -32,16 +31,6 @@ export default function TabRoutes() {
         height: 0,
       }
       }}}>
-      
-
-      <Tab.Screen 
-        name='Cartas'
-        component={Cartas}
-        options={{
-          tabBarIcon: ({color, size}) => <MaterialCommunityIcons name='qrcode-scan' color={color} size={size} />,
-          tabBarLabel: 'Cartas'
-        }}
-      />
 
     <Tab.Screen 
         name='Home'

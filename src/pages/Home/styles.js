@@ -3,54 +3,79 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'blue'
     },
-
+    fotoFundo: {
+        height: '100%',
+        width: '100%',
+        alignSelf: 'flex-start',
+    },
+    //HEADER
     areaHeader: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'red',
+        paddingHorizontal: 20,
     },
-    areaUsuario: {
-        flex: 3,
-        backgroundColor: 'red',
+    areaAjuda: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
     },
     areaConfig: {
         flex: 1,
-        padding: 10,
-        
+        justifyContent: 'center',
+        alignItems: 'flex-end',
     },
     areaBotaoConfig: {
-        height: '100%',
-        width: '100%',
+        width: 50,
+        height: 50,
         borderWidth: 2,
+        borderColor: 'white',
         borderRadius: 10,
-        backgroundColor: 'brown',
+        backgroundColor: '#1da0ed',
         justifyContent: 'center',
         alignItems: 'center',
     },
     
-    areaMeio: {
-        flex: 5,
+    //LOGO
+    areaLogo: {
+        flex: 3,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    fotoLogo: {
+        height: 130,
+        width: '100%',
+        objectFit: 'contain',
     },
 
     areaFooter: {
-        flex: 1,
+        flex: 4,
+        justifyContent: 'center', 
         paddingHorizontal: 20,
-        paddingVertical: 10,
+    },
+    flex: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    flexCima: {
+        flex: 2,
+        justifyContent: 'center',
     },
     areaBotaoJogar: {
         justifyContent: 'center',
+        alignSelf: 'center',
         alignItems: 'center',
-        borderRadius: 10,
-        height: 100,
-        width: '100%',
-        backgroundColor: 'brown',
-        borderWidth: 2,
+        borderRadius: 20,
+        height: 70,
+        width: '80%',
+        backgroundColor: '#ffdd51',
+        borderWidth: 0,
+        borderColor: 'white',
     },
     fontJogar: {
         fontSize: 40,
         fontWeight: 'bold',
+        color: '#6b4f25',
     },
 
     shadowAreaElementos: {
@@ -59,7 +84,7 @@ export default StyleSheet.create({
           width: 0,
           height: 0,
         },
-        shadowOpacity: 1.2,
+        shadowOpacity: 0.6,
         shadowRadius: 4,
     },
   });
