@@ -126,14 +126,14 @@ export default function App() {
     if (valor == 1) {
       return (
         <Image
-          source={require("../../../assets/img/elementos/ice-removebg-preview.png")}
+          source={require("../../../assets/img/elementos/ice.png")}
           style={styles.fotoElemento}
         />
       );
     } else if (valor == 2) {
       return (
         <Image
-          source={require("../../../assets/img/elementos/agua.png")}
+          source={require("../../../assets/img/elementos/water.png")}
           style={styles.fotoElemento}
         />
       );
@@ -150,15 +150,14 @@ export default function App() {
   }
 
   function MostrarIcon(valor) {
-    let posicao = 20;
+    let posicao = 0;
     let imagens = [];
   
     for (let i = 0; i < valor; i++) {
-      console.log('criar');
       imagens.push(
         <Image
           key={i}
-          source={require("../../../assets/img/elementos/ice-removebg-preview.png")}
+          source={require("../../../assets/img/elementos/floco.png")}
           style={{ height: 40, width: 40, position: 'absolute', top: posicao }}
         />
       );
@@ -168,16 +167,15 @@ export default function App() {
     return imagens;
   }
   function MostrarIconA(valor) {
-    let posicao = 20;
+    let posicao = 0;
     let imagens = [];
   
     for (let i = 0; i < valor; i++) {
-      console.log('criar');
       imagens.push(
         <Image
           key={i}
           source={require("../../../assets/img/elementos/agua.png")}
-          style={{ height: 40, width: 40, position: 'absolute', top: posicao, right: 120 }}
+          style={{ height: 40, width: 40, position: 'absolute', top: posicao,}}
         />
       );
       posicao += 5;
@@ -186,16 +184,15 @@ export default function App() {
     return imagens;
   }
   function MostrarIconF(valor) {
-    let posicao = 20;
+    let posicao = 0;
     let imagens = [];
   
     for (let i = 0; i < valor; i++) {
-      console.log('criar');
       imagens.push(
         <Image
           key={i}
-          source={require("../../../assets/img/elementos/fire.png")}
-          style={{ height: 40, width: 40, position: 'absolute', top: posicao, left: 120 }}
+          source={require("../../../assets/img/elementos/fogo.png")}
+          style={{ height: 40, width: 40, position: 'absolute', top: posicao,}}
         />
       );
       posicao += 5;
@@ -207,22 +204,30 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={[styles.areaPlacar, styles.shadowAreaElementos]}>
         <View style={styles.areaEsqDir}>
+        <View style={styles.areaFoto}>
+              <Image
+                  source={require('../../../assets/img/pinguim/sensei/sensei-luta.png')}
+                  style={styles.fotoPerfil}
+              />
+          </View>
           <View style={styles.areaNumPlacar}>
-            {MostrarIcon(gelo1)}
-            {MostrarIconA(agua1)}
-            {MostrarIconF(fogo1)}
+            <Text style={styles.textPlacar}>{score}</Text>
           </View>
         </View>
 
         <View style={styles.areaMeio}>
-          <Text style={styles.textPlacar}>{score}</Text>
+          <Text style={styles.textPlacar}>X</Text>
         </View>
 
         <View style={styles.areaEsqDir}>
           <View style={styles.areaNumPlacar}>
-          {MostrarIcon(gelo2)}
-            {MostrarIconA(agua2)}
-            {MostrarIconF(fogo2)}
+            <Text style={styles.textPlacar}>{score}</Text>
+          </View>
+          <View style={styles.areaFoto}>
+              <Image
+                  source={require('../../../assets/img/pinguim/ninja/ninja-luta1.png')}
+                  style={styles.fotoPerfil}
+              />
           </View>
         </View>
       </View>
@@ -234,10 +239,49 @@ export default function App() {
               {exibirF(computador)}
             </View>
           </View>
-          <View style={styles.areaPinguim}></View>
+
+          <View style={styles.areaPinguim}>
+            <View style={styles.areaCartasGanha}>
+              <View style={[styles.areaAcumulada, styles.shadowElementos, {backgroundColor: '#e13c26',}]}>
+                {MostrarIconA(agua2)}
+              </View>
+              <View style={[styles.areaAcumulada, styles.shadowElementos, {backgroundColor: '#a399cc',}]}>
+                {MostrarIcon(gelo2)}
+              </View>
+              <View style={[styles.areaAcumulada, styles.shadowElementos, {backgroundColor: '#14489f',}]}>
+                {MostrarIconF(fogo2)}
+              </View>
+            </View>
+            <View style={styles.areaFotoPingo}>
+              <Image
+                  source={require('../../../assets/img/pinguim/ninja/ninja-luta2.png')}
+                  style={styles.fotoPinguim}
+              />
+            </View>
+            
+          </View>
         </View>
+
         <View style={styles.areaJogador}>
-          <View style={styles.areaPinguim}></View>
+          <View style={styles.areaPinguim}>
+            <View style={styles.areaFotoPingo}>
+              <Image
+                  source={require('../../../assets/img/pinguim/sensei/decosta2.png')}
+                  style={styles.fotoPinguim}
+              />
+            </View>
+            <View style={styles.areaCartasGanha}>
+              <View style={[styles.areaAcumulada, styles.shadowElementos, {backgroundColor: '#f2e429',}]}>
+                {MostrarIconA(agua1)}
+              </View>
+              <View style={[styles.areaAcumulada, styles.shadowElementos, {backgroundColor: '#0d489c',}]}>
+                {MostrarIcon(gelo1)}
+              </View>
+              <View style={[styles.areaAcumulada, styles.shadowElementos, {backgroundColor: '#5ebc44',}]}>
+                {MostrarIconF(fogo1)}
+              </View>
+            </View>
+          </View>
           <View style={styles.areaCarta}>
             <View style={[styles.fundoCarta, styles.shadowElementos]}>
               {exibirF(jogador)}
@@ -250,7 +294,7 @@ export default function App() {
         <TouchableOpacity onPress={() => jogar(1)}>
           <View style={[styles.fundoElementos, styles.shadowElementos]}>
             <Image
-              source={require("../../../assets/img/elementos/ice-removebg-preview.png")}
+              source={require("../../../assets/img/elementos/ice.png")}
               style={styles.fotoElemento}
             />
           </View>
@@ -258,7 +302,7 @@ export default function App() {
         <TouchableOpacity onPress={() => jogar(2)}>
           <View style={[styles.fundoElementos, styles.shadowElementos]}>
             <Image
-              source={require("../../../assets/img/elementos/agua.png")}
+              source={require("../../../assets/img/elementos/water.webp")}
               style={styles.fotoElemento}
             />
           </View>

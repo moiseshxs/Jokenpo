@@ -9,26 +9,28 @@ export default StyleSheet.create({
     areaPlacar: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'brown',
+        backgroundColor: '#f2ebdb',
+        borderBottomWidth: 10,
+        borderColor: '#9f795c',
     },
     areaEsqDir: {
         flex: 5,
         flexDirection: 'row',
+        
     },
     areaFoto: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
     },
     fotoPerfil: {
         height: '100%',
-        width: 140,
+        width: 200,
     },
     areaNumPlacar:{
         flex: 1,
         flexDirection: 'row',
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor:'pink'
     },
 
     areaMeio: {
@@ -43,7 +45,7 @@ export default StyleSheet.create({
 
     //ARENA
     areaArena: {
-        flex: 4,
+        flex: 5,
     },
     areaJogador: {
         flex: 1,
@@ -51,6 +53,30 @@ export default StyleSheet.create({
     },
     areaPinguim: {
         flex: 1,
+    },
+    areaFotoPingo: {
+        flex: 3,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    fotoPinguim: {
+        height: '100%',
+        width: '100%'
+    },
+    areaCartasGanha: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 5,
+    },
+    areaAcumulada: {
+        height: 50,
+        width: 50,
+        borderWidth: 4,
+        borderColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     areaCarta: {
         flex: 1,
@@ -62,27 +88,29 @@ export default StyleSheet.create({
         justifyContent: 'center',
         height: 125,
         width: 125,
-        borderWidth: 10,
+        borderWidth: 8,
         borderRadius: 5,
-        backgroundColor: 'white',
+        borderColor: '#9f795c',
+        backgroundColor: '#f2ebdb',
     },
 
     //CARTAS
     areaCartas: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'brown',
+        backgroundColor: '#f2ebdb',
         paddingHorizontal: 20,
         paddingVertical: 10,
         borderTopWidth: 10,
-        borderColor: 'black',
+        borderColor: '#9f795c',
         justifyContent:'space-between'
     },
     fundoElementos: {
-        flex: 1,
+        width: 99,
+        height: 99,
         borderRadius: 100,
         borderWidth: 5,
-        borderColor: 'black',
+        borderColor: '#9f795c',
 
         justifyContent: 'center',
         alignItems: 'center',
@@ -102,7 +130,7 @@ export default StyleSheet.create({
           width: 0,
           height: 0,
         },
-        shadowOpacity: 2.2,
+        shadowOpacity: 0.7,
         shadowRadius: 4,
     },
     

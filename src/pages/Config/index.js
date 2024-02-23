@@ -77,7 +77,7 @@ export default function App() {
   function exibirF(valor){
     if(valor==1){
       return (<Image
-        source={require('../../../assets/img/elementos/ice-removebg-preview.png')}
+        source={require('../../../assets/img/elementos/ice.png')}
         style={styles.fotoElemento}
       />)
     }else if (valor==2){
@@ -156,7 +156,7 @@ export default function App() {
         <TouchableOpacity onPress={() => jogar(1)}>
           <View style={[styles.fundoElementos, styles.shadowElementos]}>
             <Image
-              source={require('../../../assets/img/elementos/ice-removebg-preview.png')}
+              source={require('../../../assets/img/elementos/ice.png')}
               style={styles.fotoElemento}
             />
           </View>

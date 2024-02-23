@@ -87,4 +87,30 @@ export default StyleSheet.create({
         shadowOpacity: 0.6,
         shadowRadius: 4,
     },
+
+    //MODAL
+    modal: {
+        flex: 1,
+        padding: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    caixaModal: {
+        height: 400,
+        width: '100%',
+        borderRadius: 10,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        backgroundColor: '#1da0ed',
+        borderWidth: 2,
+        borderColor: 'white',
+    },
+    areaBotaoFechar: {
+        flex: 1,
+        alignItems: 'flex-end',
+    },
+    areaConfigModal: {
+        flex: 4,
+        flexDirection: 'row',
+    },
   });

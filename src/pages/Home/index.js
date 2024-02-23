@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import { useState } from 'react';
+import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground, Modal } from 'react-native';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 
 
 export default function App() {
   const navigation = useNavigation();
+  const [isModalVisible, setIsModalVisible] = useState(false); 
+  const [isModalVisible1, setIsModalVisible1] = useState(false);  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -38,17 +42,68 @@ export default function App() {
       <View style={styles.areaHeader}>
         <View style={styles.areaAjuda}>
           <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>
-            <TouchableOpacity onPress={() => navigation.navigate('Luta')}>
+            <TouchableOpacity onPress={() => setIsModalVisible(true)}>
               <Entypo name="help" size={30} color="white" />
             </TouchableOpacity>
           </View>
+
+          <Modal
+          visible={isModalVisible1}
+          onRequestClose={() => setIsModalVisible1(false)}
+          animationType='slide'
+          presentationStyle='overFullScreen'
+          transparent='true'
+          >
+            <View style={styles.modal}>
+              <View style={styles.caixaModal}>
+                <View style={styles.areaBotaoFechar}>        
+                  <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
+                    <TouchableOpacity onPress={() => setIsModalVisible1(false)}>
+                      <FontAwesome name="close" size={30} color="white" />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
+                <View style={styles.areaConfigModal}>
+                    
+                </View>
+
+              </View>
+            </View>
+          </Modal>
+
         </View>
         <View style={styles.areaConfig}>
           <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>
-            <TouchableOpacity onPress={() => navigation.navigate('Luta')}>
+            <TouchableOpacity onPress={() => setIsModalVisible(true)}>
               <Ionicons name="settings-sharp" size={30} color="white" />
             </TouchableOpacity>
           </View>
+
+          <Modal
+          visible={isModalVisible}
+          onRequestClose={() => setIsModalVisible(false)}
+          animationType='slide'
+          presentationStyle='overFullScreen'
+          transparent='true'
+          >
+            <View style={styles.modal}>
+              <View style={styles.caixaModal}>
+                <View style={styles.areaBotaoFechar}>        
+                  <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
+                    <TouchableOpacity onPress={() => setIsModalVisible(false)}>
+                      <FontAwesome name="close" size={30} color="white" />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+
+                <View style={styles.areaConfigModal}>
+
+                </View>
+              </View>
+            </View>
+          </Modal>
+
         </View>
       </View>
       </ImageBackground>
