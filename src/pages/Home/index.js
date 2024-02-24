@@ -42,7 +42,7 @@ export default function App() {
       <View style={styles.areaHeader}>
         <View style={styles.areaAjuda}>
           <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>
-            <TouchableOpacity onPress={() => setIsModalVisible(true)}>
+            <TouchableOpacity onPress={() => setIsModalVisible1(true)}>
               <Entypo name="help" size={30} color="white" />
             </TouchableOpacity>
           </View>
@@ -50,26 +50,83 @@ export default function App() {
           <Modal
           visible={isModalVisible1}
           onRequestClose={() => setIsModalVisible1(false)}
-          animationType='fade'
+          animationType='slide'
           presentationStyle='overFullScreen'
-          transparent={true}
+          transparent='true'
           >
+            <ImageBackground
+              source={require("../../../assets/img/fundos/vila.jpg")}
+              style={styles.fotoFundo}>
+
             <View style={styles.modal}>
               <View style={styles.caixaModal}>
-                <View style={styles.areaBotaoFechar}>        
-                  <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
-                    <TouchableOpacity onPress={() => setIsModalVisible1(false)}>
-                      <FontAwesome name="close" size={30} color="white" />
-                    </TouchableOpacity>
-                  </View>
+                <View style={styles.areaBotaoFechar}>   
+                  <View style={styles.flex}>
+                    
+                  </View>     
+                  <View style={styles.flexCima}>
+                    <Text style={styles.titleModal}>REGRAS</Text>
+                  </View>  
+                  <View style={styles.flex}>
+                    <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
+                      <TouchableOpacity onPress={() => setIsModalVisible1(false)}>
+                        <FontAwesome name="close" size={30} color="white" />
+                      </TouchableOpacity>
+                    </View>
+                  </View> 
                 </View>
 
                 <View style={styles.areaConfigModal}>
-                    
+                    <View style={styles.areaRegra}>
+                      <View style={styles.areaElemento}>
+                        <Image
+                          source={require("../../../assets/img/elementos/fogo.png")}
+                          style={styles.fotoElemento}
+                        />
+                      </View>
+                      <View style={styles.areaElementoMeio}><FontAwesome name="arrow-right" size={30} color="black" /></View>
+                      <View style={styles.areaElemento}>
+                        <Image
+                          source={require("../../../assets/img/elementos/floco.png")}
+                          style={styles.fotoElemento}
+                        />
+                      </View>
+                    </View>
+                    <View style={styles.areaRegra}>
+                      <View style={styles.areaElemento}>
+                        <Image
+                          source={require("../../../assets/img/elementos/agua.png")}
+                          style={styles.fotoElemento}
+                        />
+                      </View>
+                      <View style={styles.areaElementoMeio}><FontAwesome name="arrow-right" size={30} color="black" /></View>
+                      <View style={styles.areaElemento}>
+                        <Image
+                          source={require("../../../assets/img/elementos/fogo.png")}
+                          style={styles.fotoElemento}
+                        />
+                      </View>
+                    </View>
+                    <View style={styles.areaRegra}>
+                      <View style={styles.areaElemento}>
+                        <Image
+                          source={require("../../../assets/img/elementos/floco.png")}
+                          style={styles.fotoElemento}
+                        />
+                      </View>
+                      <View style={styles.areaElementoMeio}><FontAwesome name="arrow-right" size={30} color="black" /></View>
+                      <View style={styles.areaElemento}>
+                        <Image
+                          source={require("../../../assets/img/elementos/agua.png")}
+                          style={styles.fotoElemento}
+                        />
+                      </View>
+                    </View>
                 </View>
 
               </View>
             </View>
+            </ImageBackground>
           </Modal>
 
         </View>
@@ -87,6 +144,11 @@ export default function App() {
           presentationStyle='overFullScreen'
           transparent='true'
           >
+            <ImageBackground
+              source={require("../../../assets/img/fundos/vila.jpg")}
+              style={styles.fotoFundo}>
+
+            
             <View style={styles.modal}>
               <View style={styles.caixaModal}>
                 <View style={styles.areaBotaoFechar}>        
@@ -102,6 +164,7 @@ export default function App() {
                 </View>
               </View>
             </View>
+            </ImageBackground>
           </Modal>
 
         </View>

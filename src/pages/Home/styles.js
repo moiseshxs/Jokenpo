@@ -60,6 +60,7 @@ export default StyleSheet.create({
     flexCima: {
         flex: 2,
         justifyContent: 'center',
+        alignItems: 'center',
     },
     areaBotaoJogar: {
         justifyContent: 'center',
@@ -107,10 +108,34 @@ export default StyleSheet.create({
     },
     areaBotaoFechar: {
         flex: 1,
-        alignItems: 'flex-end',
+        flexDirection: 'row',
     },
     areaConfigModal: {
         flex: 4,
+        
+    },
+    areaRegra: {
+        flex: 1,
         flexDirection: 'row',
+    },
+    titleModal: {
+        fontSize: 30,
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    areaElemento: {
+        flex: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    areaElementoMeio: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    fotoElemento: {
+        height: '70%',
+        width: '70%',
+        objectFit: 'contain'
     },
   });
