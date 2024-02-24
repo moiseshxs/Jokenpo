@@ -4,7 +4,11 @@ export default StyleSheet.create({
     container: {
       flex: 1,
     },
-
+    fotoFundo: {
+        height: '100%',
+        width: '100%',
+        alignSelf: 'flex-start',
+    },
     //PLACAR
     areaPlacar: {
         flex: 1,

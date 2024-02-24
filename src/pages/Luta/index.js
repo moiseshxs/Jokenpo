@@ -1,8 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, Text, View, Image } from "react-native";
+import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground, ActivityIndicator} from "react-native";
 import styles from "./styles";
 import { useState } from "react";
-import { TouchableOpacity } from "react-native-web";
 
 export default function App() {
   const [jogador, setJogador] = useState(0);
@@ -202,6 +201,9 @@ export default function App() {
   }
   return (
     <SafeAreaView style={styles.container}>
+      <ImageBackground
+      source={require("../../../assets/img/fundos/dojo.png")}
+      style={styles.fotoFundo}>
       <View style={[styles.areaPlacar, styles.shadowAreaElementos]}>
         <View style={styles.areaEsqDir}>
         <View style={styles.areaFoto}>
@@ -317,6 +319,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
+      </ImageBackground>
     </SafeAreaView>
   );
 }

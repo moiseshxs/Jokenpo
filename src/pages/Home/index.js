@@ -50,9 +50,9 @@ export default function App() {
           <Modal
           visible={isModalVisible1}
           onRequestClose={() => setIsModalVisible1(false)}
-          animationType='slide'
+          animationType='fade'
           presentationStyle='overFullScreen'
-          transparent='true'
+          transparent={true}
           >
             <View style={styles.modal}>
               <View style={styles.caixaModal}>
