@@ -15,6 +15,7 @@ export default function App() {
   const [fogo2, setFogo2] = useState(0);
   const [agua2, setAgua2] = useState(0);
   const [gelo2, setGelo2] = useState(0);
+  const [elementVisible, setElementVisible] = useState(true)
   const [vitoria, setVitoria] = useState(false);
   const [derrota, setDerrota] = useState(false);
 
@@ -26,6 +27,11 @@ export default function App() {
     );
   }
 
+  function zerarImg() {
+    setJogador(0);
+    setComputador(0);
+  }
+
   function resetarContadores() {
     setAgua1(0);
     setFogo1(0);
@@ -35,23 +41,36 @@ export default function App() {
     setGelo2(0);
   }
 
+  function desaparecer() {
+    setElementVisible(!elementVisible)
+    const tempori = setTimeout(() => {
+      setElementVisible(elementVisible);
+    }, 2000);
+
+    return () => clearTimeout(tempori);
+  }
+
   useEffect(() => {
     if (vitoria) {
+      desaparecer();
+      zerarImg();
+      resetarContadores();
       const timeout = setTimeout(() => {
         setScore((prevScore) => prevScore + 1);
-        resetarContadores();
         setVitoria(false);
       }, 2000);
-
       return () => clearTimeout(timeout);
     }
+
   }, [vitoria]);
 
   useEffect(() => {
     if (derrota) {
+      desaparecer();
+      zerarImg();
+      resetarContadores();
       const timeout = setTimeout(() => {
         setScoreComputador((prevScore) => prevScore + 1);
-        resetarContadores();
         setDerrota(false);
       }, 2000);
 
@@ -274,71 +293,80 @@ export default function App() {
             </View>
 
             <View style={styles.areaCarta}>
-            <FlipCard 
-              friction={7}
-              perspective={1000}
-              flipHorizontal={true}
-              flipVertical={false}
-              flip={false}
-              clickable={true}
-            >
-              {/* Face Side */}
-              <View style={[styles.fundoCarta, styles.frente]}>
-                <Text style={{fontSize: 60, fontWeight: 'bold', color: 'white'}}>?</Text>
-              </View>
-              {/* Back Side */}
-              <View style={styles.fundoCarta}>
-                <Text>{exibirF(jogador)}</Text>
-              </View>
-            </FlipCard>
+              <FlipCard
+                friction={7}
+                perspective={1000}
+                flipHorizontal={true}
+                flipVertical={false}
+                flip={false}
+                clickable={true}
+              >
+                {/* Face Side */}
+                <View style={[styles.fundoCarta, styles.frente]}>
+                  <Text style={{ fontSize: 60, fontWeight: 'bold', color: 'white' }}>?</Text>
+                </View>
+                {/* Back Side */}
+                <View style={styles.fundoCarta}>
+                  <Text>{exibirF(jogador)}</Text>
+                </View>
+              </FlipCard>
             </View>
           </View>
 
           {vitoria && (
             <View style={styles.vitoria}>
-                <Image
-                    source={require('../../../assets/img/text/vencida.png')}
-                    style={styles.fotoPinguim}
-                  />
-            </View>
-        )}
-        {derrota && (
-          <View style={styles.vitoria}>
               <Image
-                  source={require('../../../assets/img/text/perdida.png')}
-                  style={styles.fotoPinguim}
-                />
-          </View>
-        )}
+                source={require('../../../assets/img/text/vencida.png')}
+                style={styles.fotoPinguim}
+              />
+            </View>
+          )}
+          {derrota && (
+            <View style={styles.vitoria}>
+              <Image
+                source={require('../../../assets/img/text/perdida.png')}
+                style={styles.fotoPinguim}
+              />
+            </View>
+          )}
         </View>
 
         <View style={[styles.areaCartas, styles.shadowElementos]}>
-          <TouchableOpacity onPress={() => jogar(1)}>
-            <View style={[styles.fundoElementos, styles.shadowElementos]}>
-              <Image
-                source={require("../../../assets/img/elementos/ice.png")}
-                style={styles.fotoElemento}
-              />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => jogar(2)}>
-            <View style={[styles.fundoElementos, styles.shadowElementos]}>
-              <Image
-                source={require("../../../assets/img/elementos/water.webp")}
-                style={styles.fotoElemento}
-              />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => jogar(3)}>
-            <View style={[styles.fundoElementos, styles.shadowElementos]}>
-              <Image
-                source={require("../../../assets/img/elementos/fire.png")}
-                style={styles.fotoElemento}
-              />
-            </View>
-          </TouchableOpacity>
+          {elementVisible ? (
+            <TouchableOpacity onPress={() => jogar(1)}>
+              <View style={[styles.fundoElementos, styles.shadowElementos]}>
+                <Image
+                  source={require("../../../assets/img/elementos/ice.png")}
+                  style={styles.fotoElemento}
+                />
+              </View>
+            </TouchableOpacity>
+          ) : null
+          }
+          {elementVisible ? (
+            <TouchableOpacity onPress={() => jogar(2)}>
+              <View style={[styles.fundoElementos, styles.shadowElementos]}>
+                <Image
+                  source={require("../../../assets/img/elementos/water.webp")}
+                  style={styles.fotoElemento}
+                />
+              </View>
+            </TouchableOpacity>
+          ) : null
+          }
+          {elementVisible ? (
+            <TouchableOpacity onPress={() => jogar(3)}>
+              <View style={[styles.fundoElementos, styles.shadowElementos]}>
+                <Image
+                  source={require("../../../assets/img/elementos/fire.png")}
+                  style={styles.fotoElemento}
+                />
+              </View>
+            </TouchableOpacity>
+          ) : null
+          }
         </View>
-        
+
         <StatusBar style="auto" />
       </ImageBackground>
     </SafeAreaView>
