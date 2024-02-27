@@ -331,6 +331,7 @@ export default function App() {
           )}
         </View>
 
+
         <View style={[styles.areaCartas, styles.shadowElementos]}>
           {elementVisible ? (
             <TouchableOpacity onPress={() => jogar(1)}>
@@ -365,7 +366,9 @@ export default function App() {
             </TouchableOpacity>
           ) : null
           }
+     
         </View>
+        
 
         <StatusBar style="auto" />
       </ImageBackground>

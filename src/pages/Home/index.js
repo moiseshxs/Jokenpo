@@ -152,15 +152,26 @@ export default function App() {
             <View style={styles.modal}>
               <View style={styles.caixaModal}>
                 <View style={styles.areaBotaoFechar}>        
-                  <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
-                    <TouchableOpacity onPress={() => setIsModalVisible(false)}>
-                      <FontAwesome name="close" size={30} color="white" />
-                    </TouchableOpacity>
-                  </View>
+                  <View style={styles.flex}>
+                    
+                  </View>     
+                  <View style={styles.flexCima}>
+                    <Text style={styles.titleModal}></Text>
+                  </View>  
+                  <View style={styles.flex}>
+                    <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
+                      <TouchableOpacity onPress={() => setIsModalVisible(false)}>
+                        <FontAwesome name="close" size={30} color="white" />
+                      </TouchableOpacity>
+                    </View>
+                  </View> 
                 </View>
 
                 <View style={styles.areaConfigModal}>
-
+                <Image
+                  source={require("../../../assets/img/pinguim/sensei/senseifundo.gif")}
+                  style={styles.fotoLogo}
+                />
                 </View>
               </View>
             </View>

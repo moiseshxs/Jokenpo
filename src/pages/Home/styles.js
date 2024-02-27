@@ -112,7 +112,8 @@ export default StyleSheet.create({
     },
     areaConfigModal: {
         flex: 4,
-        
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     areaRegra: {
         flex: 1,
