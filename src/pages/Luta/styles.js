@@ -47,16 +47,15 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
     vitoria: {
-        flex: 1,
-        backgroundColor:'blue',
-        width: 100,
-        height: 100,
+        width: 250,
+        height: 250,
         justifyContent: 'center',
         alignItems:'center',
         position: 'absolute',
-        
-
+        alignSelf: 'center',
+        top: '20%',
     },
+
 
     //ARENA
     areaArena: {
@@ -107,6 +106,11 @@ export default StyleSheet.create({
         borderRadius: 5,
         borderColor: '#9f795c',
         backgroundColor: '#f2ebdb',
+    },
+    frente:{
+        backgroundColor: '#1da0ed',
+        borderWidth: 8,
+        borderColor: 'white',
     },
 
     //CARTAS

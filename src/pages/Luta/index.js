@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground, ActivityIndicator } from "react-native";
 import styles from "./styles";
+import FlipCard from "react-native-flip-card";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -250,16 +251,7 @@ export default function App() {
 
             </View>
           </View>
-          {vitoria && (
-          <View style={styles.vitoria}>
-            <Text>Você venceu!</Text>
-          </View>
-        )}
-        {derrota && (
-          <View style={styles.vitoria}>
-            <Text>Você perdeu!</Text>
-          </View>
-        )}
+
           <View style={styles.areaJogador}>
             <View style={styles.areaPinguim}>
               <View style={styles.areaFotoPingo}>
@@ -280,12 +272,44 @@ export default function App() {
                 </View>
               </View>
             </View>
+
             <View style={styles.areaCarta}>
-              <View style={[styles.fundoCarta, styles.shadowElementos]}>
-                {exibirF(jogador)}
+            <FlipCard 
+              friction={7}
+              perspective={1000}
+              flipHorizontal={true}
+              flipVertical={false}
+              flip={false}
+              clickable={true}
+            >
+              {/* Face Side */}
+              <View style={[styles.fundoCarta, styles.frente]}>
+                <Text style={{fontSize: 60, fontWeight: 'bold', color: 'white'}}>?</Text>
               </View>
+              {/* Back Side */}
+              <View style={styles.fundoCarta}>
+                <Text>{exibirF(jogador)}</Text>
+              </View>
+            </FlipCard>
             </View>
           </View>
+
+          {vitoria && (
+            <View style={styles.vitoria}>
+                <Image
+                    source={require('../../../assets/img/text/vencida.png')}
+                    style={styles.fotoPinguim}
+                  />
+            </View>
+        )}
+        {derrota && (
+          <View style={styles.vitoria}>
+              <Image
+                  source={require('../../../assets/img/text/perdida.png')}
+                  style={styles.fotoPinguim}
+                />
+          </View>
+        )}
         </View>
 
         <View style={[styles.areaCartas, styles.shadowElementos]}>

@@ -11,7 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function App() {
   const navigation = useNavigation();
   const [isModalVisible, setIsModalVisible] = useState(false); 
-  const [isModalVisible1, setIsModalVisible1] = useState(false);  
+  const [isModalVisible1, setIsModalVisible1] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
