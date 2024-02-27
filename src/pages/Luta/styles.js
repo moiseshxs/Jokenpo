@@ -46,6 +46,17 @@ export default StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
     },
+    vitoria: {
+        flex: 1,
+        backgroundColor:'blue',
+        width: 100,
+        height: 100,
+        justifyContent: 'center',
+        alignItems:'center',
+        position: 'absolute',
+        
+
+    },
 
     //ARENA
     areaArena: {

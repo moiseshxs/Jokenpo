@@ -43,7 +43,7 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     fotoLogo: {
-        height: 130,
+        height: 180,
         width: '100%',
         objectFit: 'contain',
     },
