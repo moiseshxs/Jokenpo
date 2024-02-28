@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground, ActivityIndicator } from "react-native";
 import styles from "./styles";
-import FlipCard from "react-native-flip-card";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -293,23 +292,9 @@ export default function App() {
             </View>
 
             <View style={styles.areaCarta}>
-              <FlipCard
-                friction={7}
-                perspective={1000}
-                flipHorizontal={true}
-                flipVertical={false}
-                flip={false}
-                clickable={true}
-              >
-                {/* Face Side */}
-                <View style={[styles.fundoCarta, styles.frente]}>
-                  <Text style={{ fontSize: 60, fontWeight: 'bold', color: 'white' }}>?</Text>
-                </View>
-                {/* Back Side */}
-                <View style={styles.fundoCarta}>
-                  <Text>{exibirF(jogador)}</Text>
-                </View>
-              </FlipCard>
+              <View style={[styles.fundoCarta, styles.shadowElementos]}>
+                {exibirF(jogador)}
+              </View>
             </View>
           </View>
 
