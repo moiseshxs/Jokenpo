@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useEffect } from 'react';
 
 
-import Gif from '../../../assets/img/pinguim/sensei/senseifundo.gif';
+import Gif from '../../../assets/img/loading/carro.gif';
 
 
 export default function App() {

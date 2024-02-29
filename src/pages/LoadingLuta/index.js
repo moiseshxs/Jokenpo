@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useEffect } from 'react';
 
 
-import Gif from '../../../assets/img/pinguim/sensei/senseifundo.gif';
+import Gif from '../../../assets/img/loading/pizza.gif';
 
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Luta');
-    }, 3000);
+    }, 2000);
   }, []);
 
   return (
