@@ -25,16 +25,6 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'flex-end',
     },
-    areaBotaoConfig: {
-        width: 50,
-        height: 50,
-        borderWidth: 2,
-        borderColor: 'white',
-        borderRadius: 10,
-        backgroundColor: '#1da0ed',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     
     //LOGO
     areaLogo: {

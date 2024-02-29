@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../pages/Home';
-import Config from '../pages/Config';
+import Loading from '../pages/Loading';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,11 +42,11 @@ export default function TabRoutes() {
       />
 
       <Tab.Screen 
-        name='Config'
-        component={Config}
+        name='Loading'
+        component={Loading}
         options={{
           tabBarIcon: ({color, size}) => <Feather name='help-circle' color={color} size={size} />,
-          tabBarLabel: 'Config',
+          tabBarLabel: 'Loading',
         }}
       />
     </Tab.Navigator>

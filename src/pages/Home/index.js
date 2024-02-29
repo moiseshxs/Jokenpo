@@ -1,17 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { Ionicons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { useState } from 'react';
 import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground, Modal } from 'react-native';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
+import BotaoAzul from '../../../components/BotaoAzul';
+import Regra from '../../../components/Regra';
+
+import Fogo from '../../../assets/img/elementos/fogo.png';
+import Floco from '../../../assets/img/elementos/floco.png';
+import Agua from '../../../assets/img/elementos/agua.png';
 
 
 export default function App() {
   const navigation = useNavigation();
   const [isModalVisible, setIsModalVisible] = useState(false); 
   const [isModalVisible1, setIsModalVisible1] = useState(false);
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -30,23 +35,22 @@ export default function App() {
       <View style={styles.areaFooter}>
         <View style={styles.flexCima}></View>
         <View style={styles.flex}>
-        <TouchableOpacity onPress={() => navigation.navigate('Luta')}>
+        <TouchableOpacity onPress={() => navigation.navigate('LoadingLuta')}>
           <View style={[styles.areaBotaoJogar, styles.shadowAreaElementos]}>
             <Text style={styles.fontJogar}>Jogar Agora!</Text>
           </View>
         </TouchableOpacity>
         </View>
-        <View style={styles.flex}></View>
+        <View style={styles.flex}>
+        </View>
       </View>
 
       <View style={styles.areaHeader}>
         <View style={styles.areaAjuda}>
-          <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>
             <TouchableOpacity onPress={() => setIsModalVisible1(true)}>
-              <Entypo name="help" size={30} color="white" />
+              <BotaoAzul icone='help-sharp' cor='white'/>
             </TouchableOpacity>
-          </View>
-
+         
           <Modal
           visible={isModalVisible1}
           onRequestClose={() => setIsModalVisible1(false)}
@@ -67,61 +71,17 @@ export default function App() {
                   <View style={styles.flexCima}>
                     <Text style={styles.titleModal}>REGRAS</Text>
                   </View>  
-                  <View style={styles.flex}>
-                    <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
+                  <View style={styles.flex}>          
                       <TouchableOpacity onPress={() => setIsModalVisible1(false)}>
-                        <FontAwesome name="close" size={30} color="white" />
+                        <BotaoAzul icone='close-sharp' cor='white'/>
                       </TouchableOpacity>
-                    </View>
                   </View> 
                 </View>
 
                 <View style={styles.areaConfigModal}>
-                    <View style={styles.areaRegra}>
-                      <View style={styles.areaElemento}>
-                        <Image
-                          source={require("../../../assets/img/elementos/fogo.png")}
-                          style={styles.fotoElemento}
-                        />
-                      </View>
-                      <View style={styles.areaElementoMeio}><FontAwesome name="arrow-right" size={30} color="black" /></View>
-                      <View style={styles.areaElemento}>
-                        <Image
-                          source={require("../../../assets/img/elementos/floco.png")}
-                          style={styles.fotoElemento}
-                        />
-                      </View>
-                    </View>
-                    <View style={styles.areaRegra}>
-                      <View style={styles.areaElemento}>
-                        <Image
-                          source={require("../../../assets/img/elementos/agua.png")}
-                          style={styles.fotoElemento}
-                        />
-                      </View>
-                      <View style={styles.areaElementoMeio}><FontAwesome name="arrow-right" size={30} color="black" /></View>
-                      <View style={styles.areaElemento}>
-                        <Image
-                          source={require("../../../assets/img/elementos/fogo.png")}
-                          style={styles.fotoElemento}
-                        />
-                      </View>
-                    </View>
-                    <View style={styles.areaRegra}>
-                      <View style={styles.areaElemento}>
-                        <Image
-                          source={require("../../../assets/img/elementos/floco.png")}
-                          style={styles.fotoElemento}
-                        />
-                      </View>
-                      <View style={styles.areaElementoMeio}><FontAwesome name="arrow-right" size={30} color="black" /></View>
-                      <View style={styles.areaElemento}>
-                        <Image
-                          source={require("../../../assets/img/elementos/agua.png")}
-                          style={styles.fotoElemento}
-                        />
-                      </View>
-                    </View>
+                  <Regra foto={Fogo} foto2={Floco}/>
+                  <Regra foto={Agua} foto2={Fogo}/>
+                  <Regra foto={Floco} foto2={Agua}/>
                 </View>
 
               </View>
@@ -131,11 +91,10 @@ export default function App() {
 
         </View>
         <View style={styles.areaConfig}>
-          <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>
             <TouchableOpacity onPress={() => setIsModalVisible(true)}>
-              <Ionicons name="settings-sharp" size={30} color="white" />
+            <BotaoAzul icone='settings-sharp' cor='white'/>
             </TouchableOpacity>
-          </View>
+  
 
           <Modal
           visible={isModalVisible}
@@ -158,12 +117,10 @@ export default function App() {
                   <View style={styles.flexCima}>
                     <Text style={styles.titleModal}></Text>
                   </View>  
-                  <View style={styles.flex}>
-                    <View style={[styles.areaBotaoConfig, styles.shadowAreaElementos]}>              
+                  <View style={styles.flex}>  
                       <TouchableOpacity onPress={() => setIsModalVisible(false)}>
-                        <FontAwesome name="close" size={30} color="white" />
+                        <BotaoAzul icone='close-sharp' cor='white'/>
                       </TouchableOpacity>
-                    </View>
                   </View> 
                 </View>
 
