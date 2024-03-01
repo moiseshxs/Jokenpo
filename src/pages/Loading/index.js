@@ -36,6 +36,5 @@ const styles = StyleSheet.create({
   fotoLoading: {
     height: '100%',
     width: '100%',
-    resizeMode: 'contain',
   },
 });
