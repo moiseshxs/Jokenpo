@@ -54,12 +54,12 @@ export default function App() {
         <View style={styles.areaHeader}>
           <View style={styles.areaAjuda}>
             <TouchableOpacity>
-              <BotaoAzul icone="help-sharp" cor="white" />
+              <BotaoAzul icone="settings-sharp" cor="white" />
             </TouchableOpacity>
           </View>
           <View style={styles.areaConfig}>
             <TouchableOpacity>
-              <BotaoAzul icone="help-sharp" cor="white" />
+              <BotaoAzul icone="documents" cor="white" />
             </TouchableOpacity>
           </View>
         </View>
