@@ -44,7 +44,7 @@ export default function StackRoutes() {
           title: 'Entrar',
           headerStyle: { backgroundColor: 'white' },
           headerTintColor: 'black',
-          headerShown: false,
+          headerShown: true,
         }}
       />
 
@@ -52,10 +52,10 @@ export default function StackRoutes() {
         name='Cadastro'
         component={Cadastro}
         options={{
-          title: 'Cadastro',
+          title: 'Crie seu pinguim',
           headerStyle: { backgroundColor: 'white' },
           headerTintColor: 'black',
-          headerShown: false,
+          headerShown: true,
         }}
       />
 

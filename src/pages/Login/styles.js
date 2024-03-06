@@ -10,7 +10,7 @@ export default StyleSheet.create({
     },
 
     areaLogo: {
-      flex: 3,
+      flex: 4,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -36,7 +36,7 @@ export default StyleSheet.create({
       borderRadius: 30,
       alignItems: 'center',
       justifyContent: 'center', 
-      borderWidth: 4,
+      borderWidth: 3,
     },
     bordaBotao:{
       borderColor: '#B89042',
@@ -50,4 +50,54 @@ export default StyleSheet.create({
       fontWeight: 'bold',
     },
 
+
+    areaHeader: {
+      flex: 1,
+      flexDirection: 'row',
+      paddingHorizontal: 20,
+  },
+  areaAjuda: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+  },
+  areaConfig: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'flex-end',
+  },
+  modal: {
+    flex: 1,
+    padding: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
+caixaModal: {
+    height: 400,
+    width: '100%',
+    borderRadius: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: '#1da0ed',
+    borderWidth: 2,
+    borderColor: 'white',
+},
+areaBotaoFechar: {
+    flex: 1,
+    flexDirection: 'row',
+},
+areaConfigModal: {
+    flex: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
+areaRegra: {
+    flex: 1,
+    flexDirection: 'row',
+},
+titleModal: {
+    fontSize: 30,
+    color: 'white',
+    fontWeight: 'bold',
+},
   });
