@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, Text, View, Image, TouchableOpacity, Modal, ImageBackground } from 'react-native';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
   const navigation = useNavigation();
@@ -22,19 +22,23 @@ export default function App() {
       <View style={styles.areaBotoes}>
         <View style={styles.areaBotao}>       
         
-          <View style={styles.fundoBotao}>
+        <LinearGradient
+        // Button Linear Gradient
+        colors={['#1D98E8', '#0960C1']}
+        style={[styles.fundoBotao, styles.bordaBotao1]}>
             <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-              <Text style={styles.textBotao}>Crie seu Pinguim</Text>
+              <Text style={styles.textBotao}>Crie seu pinguim</Text>
             </TouchableOpacity>
-          </View>
+        </LinearGradient>
           
-        </View>
-        <View style={styles.areaBotao}>
-          <View style={styles.fundoBotao}>
+        <LinearGradient
+        // Button Linear Gradient
+        colors={['#f9d42b', '#fda50d']}
+        style={[styles.fundoBotao, styles.bordaBotao]}>
             <TouchableOpacity onPress={() => navigation.navigate('Entrar')}>
               <Text style={styles.textBotao}>Entrar</Text>
             </TouchableOpacity>
-          </View>
+          </LinearGradient>
         </View>
       </View>
       <StatusBar style="auto" />

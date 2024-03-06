@@ -15,38 +15,39 @@ export default StyleSheet.create({
       justifyContent: 'center',
     },
     fotoLogo: {
-      height: '70%',
-      width: '70%',
+      height: '40%',
+      width: '100%',
       objectFit: 'contain',
     },
 
     areaBotoes: {
-      flex: 4,
-      backgroundColor: '#0D81CC',
-      borderWidth: 5,
-      borderColor: '#0159B3',
-      borderTopLeftRadius: 30,
-      borderTopRightRadius: 30,
+      flex: 2,
       padding: 20,
     },
 
     areaBotao: {
       flex: 1,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
     },
     fundoBotao: {
-      width: '90%',
-      height: '50%',
-      backgroundColor: '#0051B4',
+      width: "85%",
+      height: 80,
       borderRadius: 30,
-      borderWidth: 5,
-      borderColor: '#0159B3',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center', 
+      borderWidth: 4,
+    },
+    bordaBotao:{
+      borderColor: '#B89042',
+    },
+    bordaBotao1:{
+      borderColor: '#155B97',
     },
     textBotao: {
       color: 'white',
-      fontSize: 35,
+      fontSize: 30,
+      fontWeight: 'bold',
     },
+
   });

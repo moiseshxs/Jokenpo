@@ -3,13 +3,12 @@ import { SafeAreaView, Text, View, Image, TouchableOpacity, ImageBackground, Mod
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 
-
 export default function App() {
   const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
-      
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
