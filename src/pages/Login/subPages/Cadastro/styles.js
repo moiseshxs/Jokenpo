@@ -53,6 +53,11 @@ export default StyleSheet.create({
       width: '100%',
       paddingHorizontal: 10
     },
+    formulario1: {
+      flex:2,
+      width: '100%',
+      paddingHorizontal: 10
+    },
     number: {
       backgroundColor: '#0068B7',
       color: 'white',
@@ -75,5 +80,25 @@ export default StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 10,
+    },
+    areaFoto: {
+      width:'100%',
+      height:'80%',
+      display: 'flex',
+      justifyContent: 'flex-start'
+    },
+    areaOpcoes: {
+      flexDirection: 'row',
+      flex: 1,
+      justifyContent: 'space-around'
+    },
+    opcao: {
+      width: 40,
+      height: 40,
+    },
+    fotoP: {
+      width: '100%',
+      height: '100%',
+      resizeMode: 'cover',
     }
   });

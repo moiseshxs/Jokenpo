@@ -9,25 +9,65 @@ import {
   Modal,
   TextInput,
 } from "react-native";
+import React, { useState } from 'react';
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
 
-  const [cor, setCor ] = useState(0);
+  const[cor, setCor] = useState('cinza')
+
+  function escolherCinza(){
+    setCor('cinza');
+  }
+  function escolherVerde(){
+    setCor('verde');
+  }
+  function escolherVermelho(){
+    setCor('vermelho');
+  }
+
+  function mostrarPenguin(){
+    if (cor=='cinza'){
+      return <Image
+      source={require("../../../../../assets/img/pinguim/PCinza.png")}
+      style={styles.fotoP}
+    /> 
+    }else if (cor == 'verde'){
+      return <Image
+      source={require("../../../../../assets/img/pinguim/PVerde.png")}
+      style={styles.fotoP}
+    />
+    }else{
+      return <Image
+      source={require("../../../../../assets/img/pinguim/PVermelho.png")}
+      style={styles.fotoP}
+    />
+    }
+  }
+
   const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.background}>
-        <View styles={styles.areaTitle}>
-          <Text style={styles.title}>Crie seu Penguim</Text>
-        </View>
-
         <View style={styles.cadastro}>
-          <View style={styles.formulario}>
-            <Text style={styles.labelInput}>Escolha a cor do seu penguim</Text>
+          <View style={styles.formulario1}>
+            <View style={styles.areaFoto}>
+              {mostrarPenguin()}
+            </View>
+            <View style={styles.areaOpcoes}>
+              <TouchableOpacity style={styles.opcao} onPress={() => escolherCinza()}>
+                <View style={{width:'100%', height:'100%', backgroundColor: 'grey', borderRadius: '100%'}}></View>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.opcao} onPress={() => escolherVerde()}>
+                <View style={{width:'100%', height:'100%', backgroundColor: 'green', borderRadius: '100%'}}></View>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.opcao} onPress={() => escolherVermelho()}>
+                <View style={{width:'100%', height:'100%', backgroundColor: 'red', borderRadius: '100%'}}></View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View style={styles.formulario}>
             <View style={styles.label}>
