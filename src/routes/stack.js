@@ -8,12 +8,13 @@ import LoadingLuta from '../pages/LoadingLuta';
 import Login from '../pages/Login';
 import Cadastro from '../pages/Login/subPages/Cadastro';
 import Entrar from '../pages/Login/subPages/Entrar';
+import Perfil from '../pages/Perfil';
 
 const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName='Cadastro' screenOptions={{headerShown: true}}>
+    <Stack.Navigator initialRouteName='Perfil' screenOptions={{headerShown: true}}>
       
       <Stack.Screen 
         name='Loading'
@@ -86,6 +87,17 @@ export default function StackRoutes() {
         component={Luta}
         options={{
           title: 'Luta',
+          headerStyle: { backgroundColor: 'white' },
+          headerTintColor: 'white',
+          headerShown: false,
+        }}
+      />
+
+<Stack.Screen 
+        name='Perfil'
+        component={Perfil}
+        options={{
+          title: 'Perfil',
           headerStyle: { backgroundColor: 'white' },
           headerTintColor: 'white',
           headerShown: false,
