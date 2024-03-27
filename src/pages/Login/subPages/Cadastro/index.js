@@ -14,6 +14,7 @@ import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import asyncStorage from '@react-native-async-storage/async-storage';
+import axios, { Axios } from 'axios'
 
 export default function App() {
   const[cor, setCor] = useState('cinza');
@@ -32,18 +33,35 @@ export default function App() {
     };
     
     
-    var dados = JSON.stringify(dadosUser)
+  //   var dados = JSON.stringify(dadosUser)
     
     
-    asyncStorage.setItem('user', dados )
-  .then(() =>{
-    console.log('Dados armazenados com sucesso!')
-  })
-  .catch (error => {
-    console.log('erro', error)
-  })
+  //   asyncStorage.setItem('user', dados )
+  // .then(() =>{
+  //   console.log('Dados armazenados com sucesso!')
+  // })
+  // .catch (error => {
+  //   console.log('erro', error)
+  // })
   
+  const axiosConfig = {
+    headers: {
+      /*         'Accept': 'application/json',
+       */ "Content-Type": "application/x-www-form-urlencoded",
+    },
+  };
+  try {
+    const response = await axios.post(
+      "http://localhost:9000/api/clienteStore",
+      dadosUser,
+      axiosConfig
+    );
+    console.log(response.data);
+  } catch (error) {
+    console.error("Erro ao criar pinguim", error);
+    return false;
   }
+};
 
   function escolherCorPenguim(cor){
     setCor(cor);
