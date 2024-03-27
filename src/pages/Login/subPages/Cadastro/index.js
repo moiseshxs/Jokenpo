@@ -17,50 +17,38 @@ import asyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
   const[cor, setCor] = useState('cinza');
-  const[nomeP, setNomeP] = useState('');
+  const[username, setUsername] = useState('');
   const[email, setEmail] = useState('');
   const[senha, setSenha] = useState('');
 
-  const salvar = async(chave1, valor1, chave2, valor2, chave3, valor3, chave4, valor4 ) => {
-    asyncStorage.setItem(chave1, valor1 )
+
+  const salvar = async() => {
+    
+    const dadosUser = {
+      'username' : username,
+      'email' : email,
+      'cor' : cor,
+      'senha' : senha,
+    };
+    
+    
+    var dados = JSON.stringify(dadosUser)
+    
+    
+    asyncStorage.setItem('user', dados )
   .then(() =>{
     console.log('Dados armazenados com sucesso!')
   })
   .catch (error => {
     console.log('erro', error)
   })
-  asyncStorage.setItem(chave2, valor2 )
-  .then(() =>{
-    console.log('Dados armazenados com sucesso!')
-  })
-  .catch (error => {
-    console.log('erro', error)
-  })
-  asyncStorage.setItem(chave3, valor3 )
-  .then(() =>{
-    console.log('Dados armazenados com sucesso!')
-  })
-  .catch (error => {
-    console.log('erro', error)
-  })
-  asyncStorage.setItem(chave4, valor4 )
-  .then(() =>{
-    console.log('Dados armazenados com sucesso!')
-  })
-  .catch (error => {
-    console.log('erro', error)
-  })
+  
   }
 
-  function escolherCinza(){
-    setCor('cinza');
+  function escolherCorPenguim(cor){
+    setCor(cor);
   }
-  function escolherVerde(){
-    setCor('verde');
-  }
-  function escolherVermelho(){
-    setCor('vermelho');
-  }
+
 
   function mostrarPenguin(){
     if (cor=='cinza'){
@@ -92,13 +80,13 @@ export default function App() {
               {mostrarPenguin()}
             </View>
             <View style={styles.areaOpcoes}>
-              <TouchableOpacity style={styles.opcao} onPress={() => escolherCinza()}>
+              <TouchableOpacity style={styles.opcao} onPress={() => escolherCorPenguim('cinza')}>
                 <View style={{width:'100%', height:'100%', backgroundColor: 'grey', borderRadius: '100%'}}></View>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.opcao} onPress={() => escolherVerde()}>
+              <TouchableOpacity style={styles.opcao} onPress={() => escolherCorPenguim('verde')}>
                 <View style={{width:'100%', height:'100%', backgroundColor: 'green', borderRadius: '100%'}}></View>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.opcao} onPress={() => escolherVermelho()}>
+              <TouchableOpacity style={styles.opcao} onPress={() => escolherCorPenguim('vermelho')}>
                 <View style={{width:'100%', height:'100%', backgroundColor: 'red', borderRadius: '100%'}}></View>
               </TouchableOpacity>
             </View>
@@ -108,7 +96,7 @@ export default function App() {
               <View style={styles.number}>1.</View>
               <Text style={styles.labelInput}>Nome do seu penguim</Text>
             </View>
-            <TextInput style={styles.input} onChangeText={setNomeP} value={nomeP} placeholder="NOME DO PENGUIM" />
+            <TextInput style={styles.input} onChangeText={setUsername} value={username} placeholder="NOME DO PENGUIM" />
           </View>
           <View style={styles.formulario}>
             <View style={styles.label}>
@@ -145,7 +133,7 @@ export default function App() {
               colors={["#6ed000", "#5db200"]}
               style={styles.button}
             >
-              <TouchableOpacity onPress={() => {salvar('cor', cor, 'nome', nomeP, 'email', email, 'senha', senha)}}>CRIAR UM PENGUIM</TouchableOpacity>
+              <TouchableOpacity onPress={() => {salvar()}}>CRIAR UM PENGUIM</TouchableOpacity>
             </LinearGradient>
           </View>
         </View>

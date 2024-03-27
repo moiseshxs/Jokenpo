@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName='Perfil' screenOptions={{headerShown: true}}>
+    <Stack.Navigator initialRouteName='Cadastro' screenOptions={{headerShown: true}}>
       
       <Stack.Screen 
         name='Loading'
@@ -56,7 +56,7 @@ export default function StackRoutes() {
           title: 'Crie seu pinguim',
           headerStyle: { backgroundColor: 'white' },
           headerTintColor: 'black',
-          headerShown: true,
+          headerShown: false,
         }}
       />
 
