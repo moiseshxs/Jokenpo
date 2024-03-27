@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName='Cadastro' screenOptions={{headerShown: true}}>
+    <Stack.Navigator initialRouteName='Entrar' screenOptions={{headerShown: true}}>
       
       <Stack.Screen 
         name='Loading'
@@ -45,7 +45,7 @@ export default function StackRoutes() {
           title: 'Entrar',
           headerStyle: { backgroundColor: 'white' },
           headerTintColor: 'black',
-          headerShown: true,
+          headerShown: false,
         }}
       />
 

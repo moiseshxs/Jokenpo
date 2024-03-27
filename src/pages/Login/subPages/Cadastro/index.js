@@ -20,7 +20,37 @@ export default function App() {
   const[cor, setCor] = useState('cinza');
   const[username, setUsername] = useState('');
   const[email, setEmail] = useState('');
-  const[senha, setSenha] = useState('');
+  const[senha, setSenha] = useState(''); 
+  const [validacao, setValidacao] = useState("");
+  const[confirmSenha, setConfirmSenha] = useState('');
+
+  const vazio = [cor, username, email, senha, confirmSenha];
+
+
+  const verificar = ()  => {
+    if(verificarCampos()){
+    if (senha === confirmSenha) {
+        salvar();
+        setValidacao("")
+      }else {
+        setValidacao("")
+        setValidacao("As senhas não correspondem");
+      }   
+    } else {
+      setValidacao("Preencha todos os campos");
+    }
+  }
+
+  const verificarCampos = () => {
+    let todosCamposPreenchidos = true;
+    for (let i = 0; i < vazio.length; i++) {
+      if (!vazio[i]) {
+        todosCamposPreenchidos = false;
+        break;
+      }
+    }
+    return todosCamposPreenchidos;
+  }
 
 
   const salvar = async() => {
@@ -143,15 +173,17 @@ export default function App() {
             <TextInput
               secureTextEntry={true}
               style={styles.input}
+              onChangeText={setConfirmSenha} value={confirmSenha}
               placeholder="CONFIRMAR SENHA"
             />
           </View>
+          <Text>{validacao}</Text>
           <View style={styles.formulario}>
             <LinearGradient
               colors={["#6ed000", "#5db200"]}
               style={styles.button}
             >
-              <TouchableOpacity onPress={() => {salvar()}}>CRIAR UM PENGUIM</TouchableOpacity>
+              <TouchableOpacity onPress={() => {verificar()}}>CRIAR UM PENGUIM</TouchableOpacity>
             </LinearGradient>
           </View>
         </View>
