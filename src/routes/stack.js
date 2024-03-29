@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator initialRouteName='Entrar' screenOptions={{headerShown: true}}>
+    <Stack.Navigator initialRouteName='Perfil' screenOptions={{headerShown: true}}>
       
       <Stack.Screen 
         name='Loading'
